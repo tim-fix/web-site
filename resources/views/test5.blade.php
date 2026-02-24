@@ -11,5 +11,10 @@
     </x-slot>
     {{$age}}
     {{$salary}}
-    {{salary}}
+    {{$salary}}
+    <p style="{{ $style }}">12345687</p>
+
+    <input value="{{ $value1 }}">
+    <input value="{{ $value2 }}">
+    <input value="{{ $value3 }}">
 </x-layout>
