@@ -11,4 +11,5 @@
     </x-slot>
     {{$age}}
     {{$salary}}
+    {{salary}}
 </x-layout>
