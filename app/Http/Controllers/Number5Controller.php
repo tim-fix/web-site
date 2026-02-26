@@ -19,7 +19,14 @@ class Number5Controller extends Controller
                 'text' => 'sometext',
                 'href' => 'http://ntpftxm-m1.prof.ru/public',
                 'date' => '24.02.2026',
-                'city' => 'Omsk'
+                'city' => '',
+                'year' => '',
+                'month' => '',
+                'day' => '',
+                'str' => 'text',
+                'age' => '19',
+                'userage' => '12',
+                'arr' => [1,2,3],
             ]);
 		}
 }
