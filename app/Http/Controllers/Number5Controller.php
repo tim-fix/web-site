@@ -27,6 +27,7 @@ class Number5Controller extends Controller
                 'age' => '19',
                 'userage' => '12',
                 'arr' => [1,2,3],
+                'arr2' => ['str','str2','str3'],
             ]);
 		}
 }

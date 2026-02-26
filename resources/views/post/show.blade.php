@@ -64,5 +64,10 @@
     <li>{{$arr[1]}}</li>
     <li>{{$arr[2]}}</li>
 </ul>
+    @foreach ($arr2 as $key => $elem)
+	<ul>
+        <li>{{ $key }} {{ $elem }}</li>
+        </ul>
+@endforeach
 
 </x-layout>
