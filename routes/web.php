@@ -6,6 +6,10 @@ use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\Number5Controller;
 
-Route::get('/post/{id}', [PostController::class,'show']);
+use App\Http\Controllers\Controller6;
 
-Route::get('/show', [Number5Controller::class,'show']);
+
+
+
+
+Route::get('/show', [Controller6::class,'show']);

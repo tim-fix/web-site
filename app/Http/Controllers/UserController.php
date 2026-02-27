@@ -23,25 +23,4 @@ class UserController extends Controller
         {
             return 'HHHHHello world';
         }
-
-        public function surnamename()
-
-        {
-            return 'Helloooooo world';
-        }
-        // public function city($id)
-        // {
-        //     $users = [
-		// 'user1' => 'city1',
-		// 'user2' => 'city2',
-		// 'user3' => 'city3',
-		// 'user4' => 'city4',
-		// 'user5' => 'city5',
-        // ];
-        
-        //     if (isset($users($id))) {
-        //         return $users[$id];
-        //     }
-        //     return 'такого юзера нет';
-        // }
 }
