@@ -10,6 +10,7 @@ class ChangePostsTable extends Migration
 		{
 		Schema::table('posts', function (Blueprint $table) {
 		$table->renameColumn('name', 'title');
+        $table->string('title')->first()->change();
 	});
 
 

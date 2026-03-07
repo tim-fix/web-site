@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
                 $table->string('value')->default('some value');
                 $table->string('comment')->comment('my comment');
                 $table->integer('vote')->unsigned();
+
 			});
 		}
 	
