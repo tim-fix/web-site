@@ -17,7 +17,7 @@ class CreatePostsTable extends Migration
                 $table->timestamp('added_on');
                 $table->string('desc')->nullable();
                 $table->string('value')->default('some value');
-                $table->string('comment')->comment('my comment');
+                $table->string('comment')->comment('my comm ent');
                 $table->integer('vote')->unsigned();
 
 			});
