@@ -8,10 +8,8 @@ class PostController extends Controller
 {
     public function show()
     {
-        $titles = DB::table('posts')->get();
+        $titles = DB::table('posts')->select('title', 'text')->get();
 
-        foreach ($titles as $title) {
-            dump($title);
-        }
+        dump($titles);
     }
 }
