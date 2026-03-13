@@ -3,6 +3,6 @@
     <title>{{$title}}</title>
 </head>
 <body>
-    {{$slot}}
+    {{$text}}
 </body>
 </html>
