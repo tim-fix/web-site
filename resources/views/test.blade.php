@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>my view</title>
+    <title>My view</title>
 </head>
 <body>
     variable one:{{$var1}}
-    variable one:{{$var2}}
+    variable two:{{$var2}}
 </body>
 </html>

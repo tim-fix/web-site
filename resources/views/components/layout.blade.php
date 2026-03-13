@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>{{$title}}</title>
-</head>
-<body>
-    {{$slot}}
-</body>
+	<head>
+		<title>{{ $title }}</title>
+	</head>
+	<body>
+		{{ $slot }}
+	</body>
 </html>
