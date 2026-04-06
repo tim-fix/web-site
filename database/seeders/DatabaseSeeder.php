@@ -6,24 +6,25 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-	public function run()
-	{
-		$this->call([
-			PostSeeder::class,
-			CommentSeeder::class,
-		]);
-	}
-}
-class PostSeeder extends Seeder
-{
-	public function run() {}
-}
-class CommentSeeder extends Seeder
-{
-	public function run() {}
+    use WithoutModelEvents;
+
+    /**
+     * Seed the application's database.
+     */
+    public function run()
+    {
+        DB::table('posts')->insert([
+            'title' => 'title 1',
+            'slug' => 'post-1',
+            'text' => 'text text text 1',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
+    }
 }

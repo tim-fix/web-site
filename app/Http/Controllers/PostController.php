@@ -8,12 +8,8 @@ class PostController extends Controller
 {
     public function show()
     {
-        $titles = DB::table('users')
-            ->where('age', '=', 30)
-            ->orwhere('salary', '=', 2222)
-            ->orwhere('id', '>', '1')
-            ->get();
+        $posts = DB::table('posts')->get();
 
-        dump($titles);
+        return view('post.show', ['post' => $posts]);
     }
 }
