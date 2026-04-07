@@ -4,10 +4,11 @@
 </head>
 <body>
     <form action="" method="POST">
-	<input name="title">
-	<input name="desc">
-	<input name="date">
-	<textarea name="text"></textarea>
+		@csrf
+	<input name="title" value="{{ $posts->title }}">
+	<input name="desc" value="{{ $posts->desc }}">
+	<input name="date" value="{{ $posts->date }}">
+	<textarea name="text">{{ $posts->text }}</textarea>
 	<input name="submit" type="submit">
 </form>
 </body>

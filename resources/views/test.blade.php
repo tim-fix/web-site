@@ -18,5 +18,8 @@
     variable three:{{$var3}} <br>
     variable four:{{$var4}} <br>
     variable five:{{$var5}} <br>
+
+    <a href="./1">ссылка на 1 статью</a><br>
+    <a href="./2">ссылка на 2 статью</a>
 </body>
 </html>

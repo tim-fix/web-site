@@ -7,11 +7,30 @@ use App\Models\Posts;
 
 class PostsController extends Controller
 {
-    public function getAll($order = 'created_at') 
+    public function getAll(Request $request) 
     {
-        $posts = Posts::orderBy($order)->get();
-
-        dd($posts);
+        
+        $title = $request->input('title');
+            $name = $request->input('name');
+            $desc = $request->input('desc');
+            $likes = $request->input('likes');
+            $text = $request->input('text');
+            $date = $request->input('date');
+    
+    $posts = Posts::all();
+    $posts->title = $title;
+    $posts->desc = $desc;
+    $posts->likes = $likes;
+    $posts->text = $text;
+    $posts->date = $date;
+    $posts->name = $name;
+    return view('test', [
+        'var1' => $name,
+        'var2' => $desc,
+        'var3' => $likes,
+        'var4' => $text,
+        'var5' => $date,
+    ]);
     }
     public function getOne($id)
     {
@@ -52,5 +71,20 @@ class PostsController extends Controller
         $posts->desc = "Новое описание записи с id 1";
         $posts->save();
         echo 'новый title';
+    }
+
+    public function editPost(Request $request, $id)
+    {
+            $posts = Posts::find($id);
+            if ($request->has('submit')) {
+				$posts->title = $request->title;
+				$posts->desc  = $request->desc;
+				$posts->date  = $request->date;
+				$posts->text  = $request->text;
+				
+				$posts->save(); 
+
+            }
+            return view('editPost', ['posts' => $posts]);
     }
 }
