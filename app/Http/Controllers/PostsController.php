@@ -37,6 +37,10 @@ class PostsController extends Controller
         $posts = Posts::orderBy('created_at')->get();
         dd($posts);
     }
+    public function Post()
+    {
+        
+    }
     public function newPost(Request $request)
     {
             $title = $request->input('title');
@@ -86,5 +90,16 @@ class PostsController extends Controller
 
             }
             return view('editPost', ['posts' => $posts]);
+    }
+    public function first()
+    {
+        $posts = Posts::firstOrCreate(['title' => 'Flight 10']);
+    }
+
+    public function delPost($id)
+    {
+        $posts = Posts::find($id);
+        $posts->delete();
+        
     }
 }
