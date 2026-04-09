@@ -13,3 +13,5 @@ Route::get('/post/rework', [PostsController::class,'rework']);
 Route::match(['get','post'], '/post/edit/{id}', [PostsController::class,'editPost']);
 Route::get('/post/first', [PostsController::class,'first']);
 Route::get('/post/del/{id}', [PostsController::class,'delPost']);
+Route::get('/getDeletedPost/{id}', [PostsController::class,'getDeletedPost']);
+Route::match(['get', 'post'], '/restorePost', [PostsController::class,'restorePost']);

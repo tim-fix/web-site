@@ -37,9 +37,9 @@ class PostsController extends Controller
         $posts = Posts::orderBy('created_at')->get();
         dd($posts);
     }
-    public function Post()
+    public function post()
     {
-        
+
     }
     public function newPost(Request $request)
     {
@@ -100,6 +100,24 @@ class PostsController extends Controller
     {
         $posts = Posts::find($id);
         $posts->delete();
+    }
+    public function getDeletedPost()
+    {
+        $posts = Posts::find(1);
+        $posts->delete();
+        $deletedPosts = Posts::onlyTrashed()->get();
+        return view('posts', [
+            'var1' => $deletedPosts,
+        ]);
         
+    }
+    public function restorePost(Request $request)
+    {
+        $id = $request->input('id');
+        $posts = Posts::withTrashed()->find(1);
+        $posts->restore($id);
+        return view('deleted', [
+            'var1' => $id
+        ]);
     }
 }
