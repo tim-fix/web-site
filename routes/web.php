@@ -10,10 +10,4 @@ Route::get('/post/all/{order?}', [PostsController::class,'getAll']);
 Route::get('/post/new', [PostsController::class,'newPost']);
 Route::post('/post/new', [PostsController::class,'newPost']);
 Route::get('/post/rework', [PostsController::class,'rework']);
-
-
-
-
-
-
 Route::match(['get','Db'], '/post/edit', [DbController::class,'Db']);

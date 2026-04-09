@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Flight extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'updated_at', 'creation_date'];
+    const CREATED_AT = 'flight';
 }

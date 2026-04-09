@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Flight;
 
 class FlightController extends Controller
 {
-     public function show()
+
+public function show(Request $request )
     {
-        $flights = Flight::all();
-        
-        foreach ($flights as $flight) {
-            echo $flight->name;
-        }
+        $flight = new Flight;
+        $flight->name = $request->name;
+        $flight->save();
     }
 }
