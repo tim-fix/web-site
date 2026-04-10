@@ -115,7 +115,7 @@ class PostsController extends Controller
     {
         $id = $request->input('id');
         $posts = Posts::withTrashed()->find(1);
-        $posts->restore($id);
+        $posts->restore();
         return view('deleted', [
             'var1' => $id
         ]);

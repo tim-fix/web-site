@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FlightController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/show', [FlightController::class,'show']);
@@ -15,3 +16,4 @@ Route::get('/post/first', [PostsController::class,'first']);
 Route::get('/post/del/{id}', [PostsController::class,'delPost']);
 Route::get('/getDeletedPost/{id}', [PostsController::class,'getDeletedPost']);
 Route::match(['get', 'post'], '/restorePost', [PostsController::class,'restorePost']);
+Route::get('/profiles', [UsersController::class,'profiles']);

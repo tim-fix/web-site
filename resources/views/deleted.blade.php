@@ -9,6 +9,6 @@
         <button type="submit">отправить</button>
     </form>
     variable one:{{$var1}} <br>
-    <a href="./getDeletedPost/{$var1}">удалить пост</a>
+    <a href="./getDeletedPost/{{$var1}}">удалить пост</a>
 </body>
 </html>
