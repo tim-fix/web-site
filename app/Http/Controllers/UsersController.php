@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function profiles($id)
+    public function profiles()
     {
-        $user = Users::find();
-        $name = $user->profiles->name;
-        return([
-            $user->login,
-            $user->password
+
+        $users = Users::whereIn('id', [1,2])->get();
+        return view('profiles', [
+            'var1' => $users,
         ]);
     }
 }
