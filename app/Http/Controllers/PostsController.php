@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
+use App\Models\Comment;
 
 class PostsController extends Controller
 {
@@ -119,5 +120,11 @@ class PostsController extends Controller
         return view('deleted', [
             'var1' => $id
         ]);
+    }
+    public function comment()
+    {
+        $comment = new Comment(['title' => 'A new comment']);
+        $post = Posts::find(1);
+        $post->comments()->save($comment);
     }
 }
