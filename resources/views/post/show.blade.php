@@ -1,9 +1,9 @@
 <x-layout>
-	@foreach ($posts as $post)
+	@foreach ($books as $book)
 		<div>
-			<h2>{{ $post->title }}</h2>
+			<h2>{{ $book->title }}</h2>
 			<div>
-				{{ $post->text }}
+				{{ $book->text }}
 			</div>
 		</div>
 	@endforeach

@@ -5,7 +5,6 @@
             <th>Имя</th>
             <th>Комментарий</th>
             <th>Дата комментария</th>
-            <th>Удаление записи</th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +14,22 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->comment }}</td>
                 <td>{{ $user->date_of_comment }}</td>
-                <td><a href="./del/{{ $user->id }}">удалить</a></td>
             </tr>
         @endforeach
     </tbody>
 </table><br><br>
+<!DOCTYPE html>
+<head>
+    <title>My view</title>
+</head>
+<body>
+    <form action="" method="POST">
+        @csrf
+        <input type="text" name="name" placeholder="name"><br><br>
+        <input type="text" name="comment" placeholder="comment"><br><br>
+        <button type="submit">отправить</button>
+    </form>
+
+    <a href="./moderator">Модератор</a>
+</body>
+</html>

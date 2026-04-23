@@ -9,19 +9,26 @@ class BookController extends Controller
 {
     public function book(Request $request)
     {
-        $name = $request->input('name');
-        $comment = $request->input('comment');
-    
-    $book = Book::all();
-
-    $book = new Book;
-    $book->comment = $comment;
-    $book->name = $name;
-    $book->save();
-    return view('book', [
-        'var1' => $name,
-        'var2' => $comment,
-        
-    ]);
+     if ($request->isMethod('post') && $request->has('name')) {
+        $book = new Book;
+        $book->name = $request->input('name');
+        $book->comment = $request->input('comment');
+        $book->save();
     }
+    $users = Book::all();
+
+    return view('bookcom', [
+        'users' => $users,
+        'var1'  => $request->input('name'),
+        'var2'  => $request->input('comment'),
+    ]);
+}
+    public function moderator()
+    {
+        $users = Book::all();
+        return view('book', [
+            'users' => $users,
+        ]);
+    }
+    
 }
