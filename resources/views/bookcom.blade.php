@@ -8,12 +8,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($users as $user)
+        @foreach($books as $book)
             <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->comment }}</td>
-                <td>{{ $user->date_of_comment }}</td>
+                <td>{{ $book->id }}</td>
+                <td>{{ $book->name }}</td>
+                <td>{{ $book->comment }}</td>
+                <td>{{ $book->date_of_comment }}</td>
             </tr>
         @endforeach
     </tbody>

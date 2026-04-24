@@ -9,14 +9,24 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($users as $user)
+        @foreach($books as $book)
             <tr>
-                <td>{{ $user->id }}</td>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->comment }}</td>
-                <td>{{ $user->date_of_comment }}</td>
-                <td><a href="./del/{{ $user->id }}">удалить</a></td>
+                <td>{{ $book->id }}</td>
+                <td>{{ $book->name }}</td>
+                <td>{{ $book->comment }}</td>
+                <td>{{ $book->date_of_comment }}</td>
+                <td><a href="./del/{{ $book->id }}">удалить</a><br><a href="./rew/{{ $book->id }}">редактировать</a></td>
             </tr>
         @endforeach
     </tbody>
 </table><br><br>
+
+
+<!DOCTYPE html>
+<head>
+    <title>My view</title>
+</head>
+<body>
+    <a href="../book">Главная</a>
+</body>
+</html>

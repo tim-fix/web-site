@@ -15,20 +15,36 @@ class BookController extends Controller
         $book->comment = $request->input('comment');
         $book->save();
     }
-    $users = Book::all();
+    $books = Book::all();
 
     return view('bookcom', [
-        'users' => $users,
+        'books' => $books,
         'var1'  => $request->input('name'),
         'var2'  => $request->input('comment'),
     ]);
 }
     public function moderator()
     {
-        $users = Book::all();
+        $books = Book::all();
         return view('book', [
-            'users' => $users,
+            'books' => $books,
         ]);
     }
-    
+    public function moderatordel($id)
+    {
+        $books = Book::find($id);
+        $books->delete();
+    }
+    public function moderatorrew(Request $request, $id)
+    {
+         $books = Book::find($id);
+            if ($request->isMethod('post') && $request->has('name')) {
+        
+        $books->name = $request->input('name');
+        $books->comment = $request->input('comment');
+        $books->save();
+    }
+            return view('bookrew', [
+                'books' => $books]);
+    }
 }
