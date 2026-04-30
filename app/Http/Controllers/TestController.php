@@ -9,10 +9,16 @@ class TestController extends Controller
 {
     public function form(Request $request)
     {
-        if ($request->has('num')) {
-            var_dump($request->input('num') * 2);
+        if ($request->isMethod('post')) {
+            echo('!!');
         }
-
+        else{
+            echo('!');
+        }
         return view('test');
+    }
+    public function result()
+    {
+        
     }
 }
