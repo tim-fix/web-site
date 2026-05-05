@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/first', [DescController::class, 'first_screen']);
 Route::match(['get', 'post'], '/desc', [DescController::class,'desc']);
-Route::get('test/form', [TestController::class, 'form']);
+Route::match(['get', 'post'], 'test/form', [TestController::class, 'form']);
 Route::get('test/result', [TestController::class, 'result']);
