@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Desc extends Model
+class Forms extends Model
 {
     //
 }
