@@ -10,3 +10,4 @@ Route::match(['get', 'post'], '/desc', [DescController::class,'desc']);
 Route::get('/test/method/', [FormsController::class, 'showPath']);
 Route::get('/session', [SessionController::class, 'session']);
 Route::match(['get', 'post'], '/show', [TestController::class, 'show']);
+Route::get('/counter', [TestController::class, 'index']);
