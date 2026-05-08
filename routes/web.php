@@ -7,7 +7,7 @@ use App\Http\Controllers\DbController;
 use App\Http\Controllers\GuestBookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdController;
-use App\Http\Controllers\LocationController;
+// use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TestController;
 
 
@@ -26,3 +26,4 @@ Route::post('/categories/category1/ads', [AdController::class, 'store'])->name('
 // Route::get('/cities', CityController::class);
 // Route::get('/attractions', AttractionController::class);
 Route::get('/test', [TestController::class, 'form']);
+Route::get('/test/result', [TestController::class, 'result']);
