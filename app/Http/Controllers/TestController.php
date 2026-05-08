@@ -6,31 +6,14 @@ use App\Http\Controllers\Controller;
 	
 class TestController extends Controller
 {
-	public function form(Request $request)
+	public function setFlash(Request $request)
 		{
-			// Если форма была отправлена...
-			if ($request->has('num')) {
-				// Получим отправленное число:
-				$num = $request->input('num');
-				
-				// Если выполняется условие...
-				if ($num >= 0 and $num <= 10) {
-					// Выполним редирект с данными формы:
-					return redirect('test/result')->withInput();
-				} else {
-					// Условие не выполнено - опять покажем форму:
-					return view('test');
-				}
-			} else {
-				// Если форма не была отправлена...
-				return view('test'); // покажем представление с формой
-			}
+			session()->flash('success','Выполнено успешно');
+			return redirect()->route('show-flash');
 		}
-		
-		public function result(Request $request)
+	public function showFlash(Request $request)
 		{
-			// После редиректа выведем на экран данные формы:
-			return $request->input('num');
+			return view('test');
 		}
-	}
+}
 
