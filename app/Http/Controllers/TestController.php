@@ -1,19 +1,20 @@
 <?php
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+	namespace App\Http\Controllers;
 	
-class TestController extends Controller
-{
-	public function setFlash(Request $request)
+	use App\Http\Controllers\Controller;
+	use Illuminate\Http\Request;
+	
+	class TestController extends Controller
+	{
+		public function form(Request $request)
 		{
-			session()->flash('success','Выполнено успешно');
-			return redirect()->route('show-flash');
-		}
-	public function showFlash(Request $request)
-		{
+			$request->flash();
 			return view('test');
 		}
-}
 
+		
+		public function result(Request $request)
+		{
+			return $request->old('name') . ' ' . $request->old('age');
+		}
+	}
