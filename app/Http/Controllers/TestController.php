@@ -2,19 +2,12 @@
 	namespace App\Http\Controllers;
 	
 	use App\Http\Controllers\Controller;
-	use Illuminate\Http\Request;
 	
 	class TestController extends Controller
 	{
-		public function form(Request $request)
+		public function show()
 		{
-			$request->flash();
-			return view('test');
-		}
-
-		
-		public function result(Request $request)
-		{
-			return $request->old('name') . ' ' . $request->old('age');
+			return response()->view('test')->header('Content-Type', 'text/plain');
 		}
 	}
+
